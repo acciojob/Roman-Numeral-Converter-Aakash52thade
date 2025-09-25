@@ -17,19 +17,16 @@ function convertToRoman(num) {
 
   let result = "";
 
-  for (let i = 0; i < romanList.length; i++) {
-    const symbol = romanList[i][0];
-    const value = romanList[i][1];
+ for(let i=0; i<romanList.length; i++){
+	 let symbol= romanList[i][0];
+	 let value = romanList[i][1];
 
-    // Repeat while num is still >= value
-    while (num >= value) {
-      result += symbol;
-      num -= value;
-    }
-  }
-
-  return result;
-}
+	 if(num >= value){
+		 result.push(symbol);
+		 num -= value;
+	 }
+	 return result;
+ }
 
 // Uncomment to test
 // console.log(convertToRoman(36)); // Output: "XXXVI"
